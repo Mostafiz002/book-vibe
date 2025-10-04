@@ -1,3 +1,4 @@
+import { BookOpenText } from "lucide-react";
 import React from "react";
 
 const Navbar = () => {
@@ -8,8 +9,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div>
-      <div className="navbar bg-base-100 shadow-sm">
+    <div className=" bg-[#f8f8f8]  border-b border-gray-200 ">
+      <div className="navbar px-0 max-w-[1250px] mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -36,7 +37,7 @@ const Navbar = () => {
              {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="text-xl flex items-center justify-start gap-1 font-semibold"><BookOpenText className="mt-1" /> Book Vibe</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -44,7 +45,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className="btn btn-soft btn-primary">Contact</a>
         </div>
       </div>
     </div>
