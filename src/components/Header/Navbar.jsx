@@ -1,11 +1,12 @@
 import { BookOpenText } from "lucide-react";
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const links = (
     <>
-      <li className="m-2">Home</li>
-      <li className="m-2">About</li>
+      <NavLink to='/'><li className="mx-0.5 my-0.5">Home</li></NavLink>
+      <NavLink to='/about'><li className="mx-0.5 my-0.5">About</li></NavLink>
     </>
   );
   return (
@@ -37,10 +38,10 @@ const Navbar = () => {
              {links}
             </ul>
           </div>
-          <a className="text-xl flex items-center justify-start gap-1 font-semibold"><BookOpenText className="mt-1" /> Book Vibe</a>
+          <a className="text-xl flex items-center justify-start gap-1 font-semibold text-purple-700"><BookOpenText className="mt-1" /> Book Vibe</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 flex items-center justify-center gap-3">
             {links}
           </ul>
         </div>
