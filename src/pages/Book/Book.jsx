@@ -3,9 +3,9 @@ import { Link } from "react-router";
 
 const Book = ({ book }) => {
   return (
-    <Link  to={`/bookDetails/${book.bookId}`}>
-      <div className="cursor-pointer group transition-transform duration-300 hover:-translate-y-2">
-        <div className="bg-white rounded-2xl shadow-md hover:shadow-xl border border-gray-100 p-6 w-80 sm:w-96 transition-all duration-300">
+    <Link  to={`/bookDetails/${book.bookId}`} className="w-full">
+      <div className="cursor-pointer group transition-transform duration-300 hover:-translate-y-2 w-full">
+        <div className="bg-white rounded-2xl shadow-md hover:shadow-xl border border-gray-100 p-6 w-full transition-all duration-300">
           {/* Image */}
           <figure className="p-4 bg-gray-50 rounded-t-xl flex justify-center">
             <img

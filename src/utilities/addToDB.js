@@ -7,10 +7,15 @@ const getStoredBook = () => {
   }
 };
 
-const getStoredDB = (id) => {
+const addToStoredDB = (id) => {
   const storedBookData = getStoredBook();
-  if(storedBookData.includes(id)){
-    alert('Already exists')
+  if (storedBookData.includes(id)) {
+    alert("Already exists");
+  } else {
+    storedBookData.push(id);
+    const data = JSON.stringify(storedBookData);
+    localStorage.setItem("readList", data);
   }
-  else{storedBookData.push(id)}
 };
+
+export { addToStoredDB, getStoredBook };

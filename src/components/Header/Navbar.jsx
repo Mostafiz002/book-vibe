@@ -5,8 +5,15 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const links = (
     <>
-      <NavLink to='/'><li className="mx-0.5 my-0.5">Home</li></NavLink>
-      <NavLink to='/about'><li className="mx-0.5 my-0.5">About</li></NavLink>
+      <NavLink to="/">
+        <li className="mx-0.5 my-0.5">Home</li>
+      </NavLink>
+      <NavLink to="/about">
+        <li className="mx-0.5 my-0.5">About</li>
+      </NavLink>
+      <NavLink to="/readList">
+        <li className="mx-0.5 my-0.5">ReadList</li>
+      </NavLink>
     </>
   );
   return (
@@ -35,10 +42,15 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-             {links}
+              {links}
             </ul>
           </div>
-          <a className="text-xl flex items-center justify-start gap-1 font-semibold text-purple-700"><BookOpenText className="mt-1" /> Book Vibe</a>
+          <Link
+            to="/"
+            className="text-xl flex items-center justify-start gap-1 font-semibold text-purple-700"
+          >
+            <BookOpenText className="mt-1" /> Book Vibe
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 flex items-center justify-center gap-3">
@@ -46,7 +58,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn btn-soft btn-primary">Contact</a>
+          <a className="btn btn-soft btn-primary text-purple-700 hover:bg-purple-700 hover:text-white">
+            Contact
+          </a>
         </div>
       </div>
     </div>

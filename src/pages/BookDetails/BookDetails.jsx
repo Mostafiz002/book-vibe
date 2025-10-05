@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import { addToStoredDB } from "../../utilities/addToDB";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -7,7 +8,7 @@ const BookDetails = () => {
   const data = useLoaderData();
   const singleBook = data.find((book) => book.bookId === bookId);
 
-  const handleMarkAsRead = (id) => {};
+  const handleMarkAsRead = (id) => {addToStoredDB(id)};
 
   return (
     <div className="my-16">
