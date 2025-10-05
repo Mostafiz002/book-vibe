@@ -1,16 +1,35 @@
-# React + Vite
+# 📚 Book Vibe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Book Vibe** is a modern React-based web app that lets users explore a curated list of books with an elegant UI and smooth animations.  
+Built with **React Router**, **Tailwind CSS**, and **Framer Motion**, it provides a seamless and interactive reading experience.
 
-Currently, two official plugins are available:
+🌐 **Live Website:** [https://book-vibe-netlify.netlify.app/](https://book-vibe-netlify.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🏠 **Home Page** – Showcases an animated banner and book collection  
+- 📖 **Book Details Page** – Displays detailed info about each book  
+- 💫 **Framer Motion Animations** – Smooth, high-quality transitions and effects  
+- ⚡ **React Router (v6)** – Clean and efficient navigation with dynamic routes  
+- 🎨 **Tailwind CSS + DaisyUI** – Modern, responsive, and minimal styling  
+- 🔍 **Dynamic Data Loading** – Fetches data efficiently using route loaders  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|-------------|----------|
+| **React** | Core UI library |
+| **React Router DOM** | Page routing and data loading |
+| **Tailwind CSS** | Utility-first styling |
+| **DaisyUI** | Tailwind component library |
+| **Framer Motion** | Animation library for React |
+| **Netlify** | Deployment and hosting |
+
+---
+
+## 📂 Project Structure
+
