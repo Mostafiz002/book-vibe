@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 import { getStoredBook } from "../../utilities/addToDB";
 import Book from "../Book/Book";
+import { ChevronDown } from "lucide-react";
 
 const ReadList = () => {
   const data = useLoaderData();
   const [readList, setReadList] = useState([]);
+  const [sort, setSort] = useState("");
 
   useEffect(() => {
     const storedBookData = getStoredBook();
@@ -13,6 +15,19 @@ const ReadList = () => {
     const myReadList = data.filter((book) => storedBooks.includes(book.bookId));
     setReadList(myReadList);
   }, []);
+
+  const handleSort = (type) => {
+    setSort(type);
+    if (type === "pages") {
+      const sortByPage = [...readList].sort(
+        (a, b) => a.totalPages - b.totalPages
+      );
+      setReadList(sortByPage);
+      return;
+    }
+    const sortByRating = [...readList].sort((a, b) => b.rating - a.rating);
+    setReadList(sortByRating);
+  };
 
   return (
     <div className="">
@@ -37,9 +52,11 @@ const ReadList = () => {
           Read Book List
         </label>
         <div className="tab-content bg-base-100 border-base-300 p-6">
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-             {readList.map(book => <Book key={book.bookId} book={book}></Book>)}
-         </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {readList.map((book) => (
+              <Book key={book.bookId} book={book}></Book>
+            ))}
+          </div>
         </div>
 
         <label className="tab">
@@ -63,6 +80,34 @@ const ReadList = () => {
         <div className="tab-content bg-base-100 border-base-300 p-6">
           Tab content 2
         </div>
+        <label className="tab">
+          <details className="dropdown -mt-1">
+            <summary className="btn bg-transparent capitalize  m-1">
+              Sort By {sort ? sort : ""}
+              <ChevronDown strokeWidth={1.5} />
+            </summary>
+            <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+              <li>
+                <a
+                  onClick={() => {
+                    handleSort("pages");
+                  }}
+                >
+                  pages
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => {
+                    handleSort("ratings");
+                  }}
+                >
+                  ratings
+                </a>
+              </li>
+            </ul>
+          </details>
+        </label>
       </div>
     </div>
   );

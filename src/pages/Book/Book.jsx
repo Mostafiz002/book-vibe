@@ -44,6 +44,10 @@ const Book = ({ book }) => {
               <span className="font-medium text-gray-700">Publisher:</span>{" "}
               {book.publisher}
             </p>
+            <p className="text-sm text-gray-600 mb-4">
+              <span className="font-medium text-gray-700">Pages:</span>{" "}
+              {book.totalPages}
+            </p>
 
             <div className="border-t border-dashed border-gray-300 my-3"></div>
 

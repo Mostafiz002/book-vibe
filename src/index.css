@@ -7,3 +7,5 @@ body{
 a.active{
     border-bottom: solid 2px #001ec6;
 }
+
+.btn{border-bottom: none; border-bottom-left-radius: 0;}

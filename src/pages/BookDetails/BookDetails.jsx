@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { addToStoredDB } from "../../utilities/addToDB";
+import {  ToastContainer } from "react-toastify";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -8,7 +9,10 @@ const BookDetails = () => {
   const data = useLoaderData();
   const singleBook = data.find((book) => book.bookId === bookId);
 
-  const handleMarkAsRead = (id) => {addToStoredDB(id)};
+  const handleMarkAsRead = (id) => {
+    addToStoredDB(id);
+    
+  };
 
   return (
     <div className="my-16">
@@ -36,13 +40,31 @@ const BookDetails = () => {
 
       {/* Buttons */}
       <div className="flex justify-center gap-4">
-        <button onClick={()=>{handleMarkAsRead(id)}} className="px-6 py-2 bg-green-500 hover:bg-green-600 text-white font-medium rounded-full shadow-md transition-all duration-300">
+        <button
+          onClick={() => {
+            handleMarkAsRead(id);
+          }}
+          className="cursor-pointer px-6 py-2 bg-green-500 hover:bg-green-600 text-white font-medium rounded-full shadow-md transition-all duration-300"
+        >
           Mark as Read
         </button>
-        <button className="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full shadow-md transition-all duration-300">
+        <button className="cursor-pointer px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full shadow-md transition-all duration-300">
           Add To Wishlist
         </button>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        
+      />
     </div>
   );
 };
